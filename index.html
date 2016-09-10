@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <!--
 	SPCN by Matt Gebert
+	Website for St. Pauls Caulfield North
 	github.com/Matt-Gebert
 -->
 <html>
 	<head>
 		<title>St. Pauls Caulfield North</title>
+
+        <!--Favicon-->
+		<link rel="icon" type="image/png" href="icon3.png">
+
 		<!-- Metas-->
 		<meta charset="utf-8">
 		<meta http-equiv="Cache-Control" content="no-store" />
+
+        <!-- Facebook Meta - Used to specify what's shown when this page is linked. -->
+        <!--<meta property="og:url"                content="http://appleplugs.com" />-->
+        <!--<meta property="og:type"               content="article" />-->
+        <!--<meta property="og:title"              content="Apple Plug: Our lightest product ever." />-->
+        <!--<meta property="og:description"        content="Upgrade to iPhone 7 with Apple Plug." />-->
+        <!--<meta property="og:image"              content="http://appleplugs.com/img/fb.jpg" />-->
+
+        <!-- Twitter Meta -->
+        <!--<meta name="twitter:card"              content="summary_large_image">-->
+        <!--<meta name="twitter:site"              content="@nicerstudio">-->
+        <!--<meta name="twitter:title"             content="Apple Plug: Our lightest product ever.">-->
+        <!--<meta name="twitter:description"       content="Upgrade to iPhone 7 with Apple Plug. When we made iPhone 6 and 6s, the world wasn't ready for the future. Now, it is. Plug yourself into the future.">-->
+        <!--<meta name="twitter:image"             content="http://appleplugs.com/img/tw.jpg">-->
+
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/jquery-ui.min.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/index.css">
 
 		<!-- Scripts at the bottom! -->
-		
+
 
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" style="width: 100%; height: 100%">
+            <div class="row">
+                 <div id="ban-container">
+                    <img id="ban-img" class="img-responsive img-rounded center-block" src="src/img/banner.png" style="height: inherit">
+                 </div>
+            </div>
 			<div class="row">
-				<div id="page-wrapper">
-					<header id="header" class="alt">
-						<h1><a href="index.html">SPCN</a> by Matt Gebert</h1>
-					</header>
-				</div>
+                <p class="pull-right">
+                    <a href="http://github.com/Matt-Gebert/SPCN">SPCN</a> by Matt Gebert<br>
+                    Contact: mattheuu.gebert@gmail.com
+                </p>
+
 			</div>
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-9">
 					<p>Some Text</p>
 				</div>
 
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<!-- Facebook: Note there's a better way to do it if online. -->
 					<div class="row">
-						<iframe 
-							src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flearningsocial%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-							width="auto"
-							height="500"
+						<iframe
+							src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flearningsocial%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+							width=100%
+							height=500
 							style="border:none;overflow:hidden"
 							scrolling="no"
 							frameborder="0"
@@ -48,25 +74,25 @@
 					</div>
 					<!-- Twitter API -->
 					<div class="row">
-						<a 	class="twitter-timeline" 
+						<a 	class="twitter-timeline"
 							href="https://twitter.com/MattGebert"
-							data-width=auto
+							data-width=100%
 							data-height=500>
 								Tweets by MattGebert
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-				
-		<!-- Scripts -->
+
+		 <!--Scripts-->
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-
+         <!--Specific Page Script -->
+        <script src="js/index.js"></script>
 
 	</body>
 </html>

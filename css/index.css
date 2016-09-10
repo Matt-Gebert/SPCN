@@ -1,0 +1,33 @@
+div#ban-container {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: 72px;
+
+    //Same as banner img
+    height: 189px;
+    max-height: 189px;
+
+    line-height: 108px;
+    background: #335C7D;
+    color: #fff;
+
+    // set animation
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+div#ban-container.sticky {
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    max-height: 48px;
+    background: #739CBD;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+body {
+    background: #000000;
+}
