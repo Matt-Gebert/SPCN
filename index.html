@@ -40,49 +40,66 @@
 
 
 	</head>
-	<body>
-		<div class="container" style="width: 100%; height: 100%">
-            <div class="row">
-                 <div id="ban-container">
-                    <img id="ban-img" class="img-responsive img-rounded center-block" src="src/img/banner.png" style="height: inherit">
-                 </div>
-            </div>
-			<div class="row">
-                <p class="pull-right">
-                    <a href="http://github.com/Matt-Gebert/SPCN">SPCN</a> by Matt Gebert<br>
-                    Contact: mattheuu.gebert@gmail.com
-                </p>
-
-			</div>
-			<div class="row">
-				<div class="col-md-9">
-					<p>Some Text</p>
-				</div>
-
-				<div class="col-md-3">
-					<!-- Facebook: Note there's a better way to do it if online. -->
-					<div class="row">
-						<iframe
-							src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flearningsocial%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-							width=100%
-							height=500
-							style="border:none;overflow:hidden"
-							scrolling="no"
-							frameborder="0"
-							allowTransparency="true">
-						</iframe>
+	<body style="margin:0">
+		<div class="navbar navbar-fixed-top" id="ban-container">
+			<img id="ban-img" class="img-responsive img-rounded" src="src/img/banner.png">
+			<p class="pull-right" style="padding-right: 20px">
+				<a href="http://github.com/Matt-Gebert/SPCN">SPCN</a> by Matt Gebert<br>
+				mattheuu.gebert@gmail.com
+			</p>
+		</div>
+		<div class="container" style="width: 100%; height: 100%; padding-top:188px; padding-left:0">
+			<!--Parallax Layers to define Slow Scrolling. Tutorial: http://keithclark.co.uk/articles/pure-css-parallax-websites/-->
+			<div class="parallax">
+				<!--<div class="parallax_layer parallax_layer_back">-->
+					<!-- Full Width Image:-->
+					<img class="scroll-img" id="scroll-img1" src="src/img2/life3.jpg">
+				<!--</div>-->
+				<div class="parallax_layer parallax_layer_front">
+					<div class="row" style="height:646px;text-align:center;">
+						<!--Some extra divs, horrible but necessary for vertical aligning...-->
+						<div style="display:table; position:absolute; width:100%;height:inherit; "><div style="display: table-cell; vertical-align:middle;"><div style="
+							background:#FFFFFF;
+							width:25%;
+							height:15%;
+							display:-moz-box;
+							-moz-box-pack:center;
+							-moz-box-align:center;
+							border-radius: 20px">
+							<h1 style="color:#000000;">Welcome</h1><i class="fa fa-smile-o fa-5x" style="padding-left:20px"></i>
+						</div></div></div>
 					</div>
-					<!-- Twitter API -->
 					<div class="row">
-						<a 	class="twitter-timeline"
-							href="https://twitter.com/MattGebert"
-							data-width=100%
-							data-height=500>
-								Tweets by MattGebert
-						</a>
+						<div class="col-md-10">
+						</div>
+
+						<div class="col-md-2">
+							<!-- Facebook: Note there's a better way to do it if online. -->
+							<div class="row pull-right" style="padding: 10px">
+								<iframe
+									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt-Pauls-Caulfield-North-Church-1176614632402200%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId""
+									width=inherit
+									height=500
+									style="border:none;overflow:hidden"
+									scrolling="no"
+									frameborder="0"
+									allowTransparency="true">
+								</iframe>
+							</div>
+							<!-- Twitter API -->
+							<div class="row pull-right" style="padding: 10px; padding-top:0px;">
+								<a 	class="twitter-timeline"
+									href="https://twitter.com/MattGebert"
+									data-width=340px
+									data-height=500>
+										Tweets by Matt Gebert
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 		 <!--Scripts-->

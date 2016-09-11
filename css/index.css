@@ -1,33 +1,93 @@
-div#ban-container {
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    font-size: 72px;
+/*BODY:*/
+            body {
+                background:  #132C3D; //#133C4D;
+                /*  Green1:   #D8EADC R:216 G:234 B:220
+                    Green2:   #C9E2C9 R:201 G:226 B:201
+                */
+            }
+/*BANNER ITMES:*/
+            div#ban-container {
+                width: 100%;
+                background: #C9E2C9;
+                color: #fff;
+                text-align: right;
+                //Same as banner img
+                height: 189px;
+                max-height: 189px;
 
-    //Same as banner img
-    height: 189px;
-    max-height: 189px;
+                // set animation
+                -webkit-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+            }
 
-    line-height: 108px;
-    background: #335C7D;
-    color: #fff;
+            div#ban-container.sticky {
+                max-height: 48px;
+                background: #D8EADC;
 
-    // set animation
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+                -webkit-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+            }
+
+            img#ban-img {
+                height: inherit;
+                float: left;
+                max-height: inherit;
+                padding-left: 20px;
+                -webkit-transition: all 0.4s ease;
+                -moz-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+            }
+
+/*SCROLLING IMAGES:*/
+            img.scroll-img{
+                width: 100%;
+                position:absolute;
+                opacity:0.7;
+            }
+
+
+/*PARALLAX FRAMES:*/
+            .parallax {
+                perspective: 1px;
+                width=100%;
+                //height: 100vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+            .parallax_layer {
+              position: relative;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            }
+            .parallax_layer_front {
+              transform: translateZ(0);
+            }
+            .parallax_layer_back {
+              transform: translateZ(-1px);
+            }
+
+
+
+
+
+
+/*Define Fading Images:*/
+#cf {
+  position:relative;
+  margin:0 auto;
 }
 
-div#ban-container.sticky {
-    font-size: 24px;
-    height: 48px;
-    line-height: 48px;
-    max-height: 48px;
-    background: #739CBD;
-    text-align: left;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
-body {
-    background: #000000;
+#cf img.top:hover {
+  opacity:0;
 }
