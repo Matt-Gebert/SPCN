@@ -40,22 +40,18 @@
 
 
 	</head>
-	<body style="margin:0">
-		<div class="navbar navbar-fixed-top" id="ban-container">
-			<img id="ban-img" class="img-responsive img-rounded" src="src/img/banner.png">
-			<p class="pull-right" style="padding-right: 20px">
-				<a href="http://github.com/Matt-Gebert/SPCN">SPCN</a> by Matt Gebert<br>
-				mattheuu.gebert@gmail.com
-			</p>
-		</div>
-		<div class="container" style="width: 100%; height: 100%; padding-top:188px; padding-left:0">
+	<body style="margin:0;">
+		<div class="container" style="width:100%; height:100%; padding-left:0; padding-right:0;">
+			<div class="navbar navbar-fixed-top" id="ban-container">
+				<img id="ban-img" class="img-responsive img-rounded" src="src/img/banner.png">
+			</div>
 			<!--Parallax Layers to define Slow Scrolling. Tutorial: http://keithclark.co.uk/articles/pure-css-parallax-websites/-->
 			<div class="parallax">
-				<!--<div class="parallax_layer parallax_layer_back">-->
+				<div class="parallax_layer parallax_layer_back">
 					<!-- Full Width Image:-->
-					<img class="scroll-img" id="scroll-img1" src="src/img2/life3.jpg">
-				<!--</div>-->
-				<div class="parallax_layer parallax_layer_front">
+					<img class="scroll-img" id="scroll-img1" src="src/img2/life4.jpg">
+				</div>
+				<div class="parallax_layer parallax_layer_front" style="padding-top:188px;">
 					<div class="row" style="height:646px;text-align:center;">
 						<!--Some extra divs, horrible but necessary for vertical aligning...-->
 						<div style="display:table; position:absolute; width:100%;height:inherit; "><div style="display: table-cell; vertical-align:middle;"><div style="
@@ -63,10 +59,11 @@
 							width:25%;
 							height:15%;
 							display:-moz-box;
-							-moz-box-pack:center;
-							-moz-box-align:center;
+							 -moz-box-pack:center;
+							 -moz-box-align:center;
+							opacity:0.7;
 							border-radius: 20px">
-							<h1 style="color:#000000;">Welcome</h1><i class="fa fa-smile-o fa-5x" style="padding-left:20px"></i>
+								<h1 style="color:#000000;opacity:1">Welcome</h1><i class="fa fa-smile-o fa-5x" style="padding-left:20px"></i>
 						</div></div></div>
 					</div>
 					<div class="row">
@@ -97,9 +94,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="row" style="margin-left:0;">
+						<p class="pull-left" style="padding-left:20px; color:#FFFFFF">
+							<a href="http://github.com/Matt-Gebert/SPCN">SPCN</a> by Matt Gebert<br>
+							mattheuu.gebert@gmail.com
+						</p>
+					</div>
 				</div>
 			</div>
-
 		</div>
 
 		 <!--Scripts-->

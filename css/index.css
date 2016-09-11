@@ -1,18 +1,20 @@
+            *{margin:0;}
 /*BODY:*/
             body {
                 background:  #132C3D; //#133C4D;
                 /*  Green1:   #D8EADC R:216 G:234 B:220
                     Green2:   #C9E2C9 R:201 G:226 B:201
                 */
+                //overflow:hidden;
             }
 /*BANNER ITMES:*/
             div#ban-container {
+                top:0;
                 width: 100%;
                 background: #C9E2C9;
                 color: #fff;
                 text-align: right;
-                //Same as banner img
-                height: 189px;
+                height: 189px;          ///Height of banner img.
                 max-height: 189px;
 
                 // set animation
@@ -23,20 +25,25 @@
             div#ban-container.sticky {
                 max-height: 48px;
                 background: #D8EADC;
-
                 -webkit-transition: all 0.4s ease;
                 transition: all 0.4s ease;
             }
 
             img#ban-img {
+                margin-left:auto;
+                margin-right:auto;
+                //float: left;
                 height: inherit;
-                float: left;
                 max-height: inherit;
-                padding-left: 20px;
                 -webkit-transition: all 0.4s ease;
                 -moz-transition: all 0.4s ease;
                 transition: all 0.4s ease;
             }
+
+            img#ban-img.sticky {
+                //float: left;
+            }
+
 
 /*SCROLLING IMAGES:*/
             img.scroll-img{
@@ -45,27 +52,32 @@
                 opacity:0.7;
             }
 
-
 /*PARALLAX FRAMES:*/
             .parallax {
                 perspective: 1px;
-                width=100%;
-                //height: 100vh;
-                overflow-x: hidden;
-                overflow-y: auto;
+                height: 100vh;
+                overflow: auto;
+                //overflow-x: hidden;
+                //overflow-y: auto;
+                padding-right:15px;
             }
             .parallax_layer {
-              position: relative;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
             }
             .parallax_layer_front {
-              transform: translateZ(0);
+                transform: translateZ(0);
             }
             .parallax_layer_back {
-              transform: translateZ(-1px);
+                /*  Scale Factors calculated by 1+(translateZ * -1) / perspective
+                    Increasing the translate Z value increases the layer speed.
+                */
+                transform: translateZ(-1px) scale(2);
+                //width:100%;
+                //height:100%;
             }
 
 
