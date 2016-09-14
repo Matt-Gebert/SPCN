@@ -10,5 +10,6 @@ $(".parallax").scroll(function() {
         }
 
     //Scrolling Fading for scroll-img
-        $(".scroll-img#scroll-img1").css("opacity", 0.7 - 0.4*$(window).scrollTop() / 350);
+        $(".scroll-img#scroll-img1").css("opacity", 0.7 - 0.4*$(this).scrollTop() / 600);
+
  });
