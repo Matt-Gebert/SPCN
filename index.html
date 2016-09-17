@@ -42,104 +42,188 @@
 </head>
 <body style="margin:0;">
 <div class="container" style="width:100%; height:100%; left:0; right:0;">
-    <div class="navbar navbar-fixed-top" id="ban-container" style="position:absolute;right:0px">
-        <img id="ban-img" class="img-responsive img-rounded" src="src/img/banner.png">
+    <div class="debug">
+        <label><input type="checkbox"> Debug</label>
     </div>
+    <div class="navbar navbar-fixed-top sticky" id="ban-container" style="position:absolute;">
+        <div class="row" id="header-row1" style="width:100%">
+            <div class="col-md-3" id="ban-height" style="max-height:48px">
+                <img id="ban-img" class="img-responsive img-rounded pull-center" src="src/img/banner2.png" onclick="javascript:location.href='#'">
+            </div>
+            <div class="col-md-9" id="nav-buttons" style="display:none">
+                <!--THIS ELEMENT IS MADE TO MOVE BETWEEN HeaderRow1 and HeaderRow2-->
+                <div id="nav-button-container" style="display:table; position:absolute; width:100%;height:100%;"><div style="display: table-cell; position:relative; vertical-align:middle; height:100%;">
+                    <div style="height:70%;width:90%; margin-left:auto;margin-right:auto; display:block">
+                        <!--<div class="col-md-2 menu-item">Home</div> WILL REPLACE WITH THE BANNER IMG.-->
+                        <div class="col-md-2 menu-item left">   <i class="fa fa-lg fa-home" aria-hidden="true"></i><span>  Our Church  </span></div>
+                        <div class="col-md-2 menu-item">        <i class="fa fa-lg fa-clock-o" aria-hidden="true"></i><span>  Services    </span></div>
+                        <div class="col-md-2 menu-item">        <i class="fa fa-lg fa-heart-o" aria-hidden="true"></i><span>  Ministries  </span></div>
+                        <div class="col-md-2 menu-item">        <i class="fa fa-lg fa-hand-peace-o" aria-hidden="true"></i><span>  Community   </span></div>
+                        <div class="col-md-2 menu-item">        <i class="fa fa-lg fa-phone" aria-hidden="true"></i><span>  Contact     </span></div>
+                        <div class="col-md-2 menu-item right">  <i class="fa fa-lg fa-send" aria-hidden="true"></i><span>  Resources   </span></div>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+        <div class="row" id="header-row2" style="width:100%;">
+            <div class="col-md-12" id="top-buttons" style="right:0; display:none;"></div>
+        </div>
+    </div>
+
+
     <!--Parallax Layers to define Slow Scrolling. Tutorial: http://keithclark.co.uk/articles/pure-css-parallax-websites/-->
     <div class="parallax">
         <div class="parallax_layer parallax_layer_back">
+            <!--Offset for HeaderBar.-->
+            <div class="row" style="height:50px; display:inline-block"></div>
             <!-- Full Width Image:-->
-            <img class="scroll-img" id="scroll-img1" src="src/img2/life4.jpg">
+            <div class="row"><img class="scroll-img" id="scroll-img1" src="src/img3/stalfreds.jpg"></div>
+            <!--<div class="row"><img class="scroll-img" id="scroll-img2" src="src/img2/life1.jpg"></div>-->
         </div>
-        <div class="parallax_layer parallax_layer_front" style="padding-top:188px;">
-            <div class="row" style="height:646px;text-align:center;">
-                <!--Some extra divs, horrible but necessary for vertical aligning...-->
-                <div style="display:table; position:absolute; width:100%;height:inherit; "><div style="display: table-cell; vertical-align:middle;"><div style="
-							background:#FFFFFF;
-							width:25%;
-							height:15%;
-							display:-moz-box;
-							 -moz-box-pack:center;
-							 -moz-box-align:center;
-							opacity:0.7;
-							border-radius: 20px">
-                    <h1 style="color:#000000;opacity:1">Welcome</h1><i class="fa fa-smile-o fa-5x" style="padding-left:20px"></i>
-                </div></div></div>
-            </div>
+        <div class="parallax_layer parallax_layer_front">
+            <!--Offset for HeaderBar.-->
+            <div class="row" style="height:400px; display:inline-block"></div>
+            <!--Welcome Message-->
             <div class="row">
-                <div class="col-md-10">
+                <div style="width:60%; margin: 0 auto">
+                    <div class="row" style="background-color:rgba(255,255,255,0.8); border-radius:10px">
+                        <div style="width:80%; margin: 0 auto">
+                            <h1>Welcome to <span style="color:#00AABA">St. Paul's</span>.</h1>
+                        </div>
+                        <div style="width:90%; margin: 0 auto;">
+                            <p style="">We're about Jesus.</p>
+                        </div>
+                    </div>
+                </div>
+            <!--Service Times-->
+            <div class="row" style="height:300px"></div>
+                <div style="width:90%; margin:0 auto; background-color:rgba(255,255,255,0.8); border-radius:10px ">
+                    <div class="row" style="margin:0">
+                        <div style="text-align:center">
+                            <h1>Service Times</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:0">
+                        <div class="col-md-4">
+                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                <div class="row" style="margin:0; text-align:center"><h3>Contemporary Worship</h3></div>
+                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10:15am Sundays</p></div>
+                                <div class="row" style="margin:0">
+                                    <img src="src/img/cafe1.jpg" style="width:100%">
+                                </div>
+                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+
+                                </p></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                <div class="row" style="margin:0; text-align:center"><h3>530@530 (Evening Service)</h3></div>
+                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>5:30pm Sundays</p></div>
+                                <div class="row" style="margin:0">
+                                    <img src="src/img/young-adults.jpg" style="width:100%">
+                                </div>
+                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+
+                                </p></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                <div class="row" style="margin:0; text-align:center"><h3>Healing Service</h3></div>
+                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10am Thursdays</p></div>
+                                <div class="row" style="margin:0">
+                                    <img src="src/img/Healing-service1.jpg" style="width:100%">
+                                </div>
+                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+                                    Our mission is to bring healing and restoration in body, mind and spirit through the power of the Cross, by the laying on of hands and the prayer of faith.<br>
+                                    The Healing Service 10.00am Thursday (February to November) offers restoration through praise and worship, teaching, the laying on of hands and intercessory prayer.<br>
+                                    Our vicar, Rev. Howard Langmead, along with guest speakers during the year, will preach on healing and related topics.<br>
+                                    The healing ministry is enhanced and supplemented by Prayer Ministry, which is offered to those who regularly attend our services.
+                                </p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Spacing-->
+                    <div class="row" style="margin:0; padding-top:30px"></div>
                 </div>
 
-                <div class="col-md-2">
-                    <!-- Facebook: Note there's a better way to do it if online. -->
-                    <div class="row pull-right" style="padding: 10px">
-                        <iframe
-                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt-Pauls-Caulfield-North-Church-1176614632402200%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                                width=inherit
-                                height=500
-                                style="border:none;overflow:hidden"
-                                scrolling="no"
-                                frameborder="0"
-                                allowTransparency="true">
-                        </iframe>
-                    </div>
-                    <!-- Twitter API -->
-                    <div class="row pull-right" style="padding: 10px; padding-top:0px;">
-                        <a 	class="twitter-timeline"
-                              href="https://twitter.com/MattGebert"
-                              data-width=340px
-                              data-height=500>
-                            Tweets by Matt Gebert
-                        </a>
-                    </div>
-                </div>
             </div>
-            <div class="row" style="margin:0;background:#C9E2C9;">
-                <div id="footerInfo">
-                    <!--Spacer-->
-                    <div class="col-md-2"></div>
-                    <!--Links-->
-                    <div class="col-md-4">
-                        <div style="margin:0 auto; display:table">
-                            <div class="row" style="text-align:left;padding-bottom:20px;">
-                                <h2>Links</h2>
-                            </div>
-                            <div class="row" style="text-align:left">
-                                <table>
-                                <tr>
-                                    <th><span style="padding-left:30px" class="glyphicon glyphicon-home"></span></th>
-                                    <th><h4><a href="#" style="padding-left:30px">Home</a></h4></th>
-                                </tr>
-                                </table>
-                            </div>
-                            <div class="row" style="padding-bottom:15px;"></div>
-                        </div>
-                    </div>
-                    <!--Contact information-->
-                    <div class="col-md-4">
-                        <div style="margin:0 auto; display:table">
-                            <div class="row" style="text-align:left;padding-bottom:20px;">
-                                <h2>Get In Touch</h2>
-                            </div>
-                            <div class="row" style="text-align:left; width:100%">
-                                <table>
-                                <tr>
-                                    <th><span style="padding-left:20px" class="glyphicon glyphicon-envelope"></span></th>
-                                    <th><h4><a style="padding-left:20px" href="mailto:info@stpaulscaulfieldnorth.com.au">info@stpaulscaulfieldnorth.com.au</a></h4></th>
-                                </tr>
-                                <tr>
-                                    <th><i style="padding-left:20px" class="fa fa-map" aria-hidden="true"></i></th>
-                                    <th><h4><a style="padding-left:20px;" href="#">530 Dandenong Rd, Caulfield North</a></h4><h4><a style="padding-left:20px;" href="#">3161 VIC, Australia</a></h4></th>
-                                </tr>
-                                </table>
+            <!--Facebook and Twitter Elements-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-10">-->
+                <!--</div>-->
 
-
+                <!--<div class="col-md-2">-->
+                    <!--&lt;!&ndash; Facebook: Note there's a better way to do it if online. &ndash;&gt;-->
+                    <!--<div class="row pull-right" style="padding: 10px">-->
+                        <!--<iframe-->
+                                <!--src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt-Pauls-Caulfield-North-Church-1176614632402200%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"-->
+                                <!--width=inherit-->
+                                <!--height=500-->
+                                <!--style="border:none;overflow:hidden"-->
+                                <!--scrolling="no"-->
+                                <!--frameborder="0"-->
+                                <!--allowTransparency="true">-->
+                        <!--</iframe>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; Twitter API &ndash;&gt;-->
+                    <!--<div class="row pull-right" style="padding: 10px; padding-top:0px;">-->
+                        <!--<a 	class="twitter-timeline"-->
+                              <!--href="https://twitter.com/MattGebert"-->
+                              <!--data-width=340px-->
+                              <!--data-height=500>-->
+                            <!--Tweets by Matt Gebert-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="row" style="padding-top:50px">
+                <div class="row" id="footer">
+                    <div id="footerInfo">
+                        <!--Spacer-->
+                        <div class="col-md-2"></div>
+                        <!--Links-->
+                        <div class="col-md-4">
+                            <div style="margin:0 auto; display:table">
+                                <div class="row" style="text-align:left;padding-bottom:20px;">
+                                    <h2>Links</h2>
+                                </div>
+                                <div class="row" style="text-align:left">
+                                    <table>
+                                    <tr>
+                                        <th><i class="fa fa-2x fa-home" aria-hidden="true" style="padding-left:30px"></i></th>
+                                        <th><h4><a href="#" style="padding-left:30px">Home</a></h4></th>
+                                    </tr>
+                                    </table>
+                                </div>
+                                <div class="row" style="padding-bottom:15px;"></div>
                             </div>
-                            <div class="row" style="padding-bottom:15px;"></div>
                         </div>
+                        <!--Contact information-->
+                        <div class="col-md-4">
+                            <div style="margin:0 auto; display:table">
+                                <div class="row" style="text-align:left;padding-bottom:20px;">
+                                    <h2>Get In Touch</h2>
+                                </div>
+                                <div class="row" style="text-align:left; width:100%">
+                                    <table>
+                                    <tr>
+                                        <th><i style="padding-left:20px" class="fa fa-lg fa-envelope" aria-hidden="true"></i></th>
+                                        <th><h4><a style="padding-left:20px" href="mailto:info@stpaulscaulfieldnorth.com.au">info@stpaulscaulfieldnorth.com.au</a></h4></th>
+                                    </tr>
+                                    <tr>
+                                        <th><i style="padding-left:20px" class="fa fa-lg fa-map" aria-hidden="true"></i></th>
+                                        <th><h4><a style="padding-left:20px;" href="#">530 Dandenong Rd, Caulfield North</a></h4><h4><a style="padding-left:20px;" href="#">3161 VIC, Australia</a></h4></th>
+                                    </tr>
+                                    </table>
+                                </div>
+                                <div class="row" style="padding-bottom:15px;"></div>
+                            </div>
+                        </div>
+                        <!--Spacer-->
+                        <div class="col-md-2"></div>
                     </div>
-                    <!--Spacer-->
-                    <div class="col-md-2"></div>
                 </div>
             </div>
             <div class="row" style="margin-left:0;">
@@ -156,6 +240,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <!--Specific Page Script -->

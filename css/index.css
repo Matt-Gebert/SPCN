@@ -1,22 +1,31 @@
+/*Root Colour Definitions*/
+            :root{
+                --green1:#D8EADC;
+                --green2:#C9E2C9;
+                --background-blue:#132C3D
+                --bord-tot:
+
+            }
+
+
             *{margin:0;}
 /*BODY:*/
             body {
-                background:  #132C3D; //#133C4D;
-                /*  Green1:   #D8EADC R:216 G:234 B:220
-                    Green2:   #C9E2C9 R:201 G:226 B:201
-                */
-                //overflow:hidden;
+                background:  var(--background-blue);
+                //background-image: url("../src/img/page.png");
+                //overflow-X:hidden;
+                //overflow-Y:scroll;
+                overflow:hidden;
             }
 /*BANNER ITMES:*/
             div#ban-container {
                 top:0;
+                left:0;
                 width: 100%;
-                background: #C9E2C9;
-                color: #fff;
-                text-align: right;
-                max-height: 189px;
-                height: 189px;          ///Height of banner img.
-
+                background: var(--green2);
+                background-image: url("../src/img/page.png");
+                max-height: 230px;
+                height: 230px;          ///Height of banner img.
                 // set animation
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
@@ -24,7 +33,6 @@
 
             div#ban-container.sticky {
                 max-height: 48px;
-                background: #D8EADC;
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
             }
@@ -32,7 +40,6 @@
             img#ban-img {
                 margin-left:auto;
                 margin-right:auto;
-                //float: left;
                 height: inherit;
                 max-height: inherit;
                 -webkit-transition: all 0.5s ease;
@@ -40,14 +47,84 @@
                 transition: all 0.5s ease;
             }
 
-            img#ban-img.sticky {
-                //float: left;
+            /*img#ban-img.sticky {
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }*/
+
+            div#ban-height {
+                max-height:150px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+
+            div#top-buttons {
+                max-height:0px;
+                height:70px;
+                width:100%;
+            }
+
+            div#nav-buttons {
+                //background-color:#132C3D;
+                height:100%;
+                right:0;
+                position:absolute;
             }
 
 
-            div#footerInfo{
-                background: #C9E2C9;
+            div.menu-item {
+                //position: relative;
+                display: inline-block;
+                border-top: #CCCCCC  1px solid;
+                border-bottom: #CCCCCC 1px solid;
+                border-right: #CCCCCC 1px solid;
+                height:100%;
+                background-color: rgba(255,255,255,0.7);
+                color: 0;
+                text-align: center;
+            }
+            div.menu-item::before {
+                content: '';
+                display: inline-block;
+                height:100%;
+                vertical-align: middle;
+            }
+
+
+            div.menu-item.left {
+                border-left: #CCCCCC 1px solid;
+                border-radius:8px 0px 0px 8px;
+            }
+            div.menu-item.right {
+                border-right: #CCCCCC 1px solid;
+                border-radius:0px 8px 8px 0px;
+            }
+
+            div.menu-item span {
+                margin:0;
                 top:0;
+                bottom:0;
+                font-family: Lustria,Georgia
+            }
+
+            div.menu-item i {
+                padding-right:8px;
+            }
+
+
+/*Footer Items*/
+            div#footer{
+                //margin:0 auto;
+                //background:#C9E2C9;
+                background-image: url("../src/img/page.png");
+                background-position: bottom center;
+            }
+
+            div#footerInfo{
+                //background: #C9E2C9;
+                //top:0;
                 bottom:0;
                 width:100%;
                 margin:0;
@@ -58,7 +135,7 @@
 /*SCROLLING IMAGES:*/
             img.scroll-img{
                 width: 100%;
-                position:absolute;
+                //position:absolute;
                 opacity:0.7;
             }
 
@@ -70,21 +147,21 @@
                 margin:0;
                 perspective: 1px;
                 height: 100vh;
+                background:#132C3D;
 
                 overflow: auto;
                 overflow-x: hidden;
+                //overflow-y: hidden;
                 overflow-y: visible;
                 //padding-right:-15px;
             }
             .parallax_layer {
                 position: absolute;
                 top: 0;
-                right: 0;
                 bottom: 0;
                 left: 0;
                 width:100%;
                 height:100%;
-                padding-right:15px
             }
             .parallax_layer_front {
                 transform: translateZ(0);
@@ -93,7 +170,10 @@
                 /*  Scale Factors calculated by 1+(translateZ * -1) / perspective
                     Increasing the translate Z value increases the layer speed.
                 */
+
                 transform: translateZ(-1px) scale(2);
+                //overflow-Y:hidden;
+                //overflow-X:hidden;
             }
 
 
@@ -136,3 +216,23 @@ h6{
 #cf img.top:hover {
   opacity:0;
 }
+
+
+.debug {
+    position: fixed;
+    top: 0;
+    left: .5em;
+    z-index: 200000;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    padding: .5em;
+    border-radius: 0 0 5px 5px;
+  }
+  .debug-on .parallax {
+    -webkit-transform: translate3d(800px, 0, -800px) rotateY(40deg);
+    transform: translate3d(500px, 0, -800px) rotateY(40deg);
+ }
+  .debug-on .parallax_layer {
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0.9;
+  }
