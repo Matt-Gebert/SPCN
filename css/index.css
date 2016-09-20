@@ -47,12 +47,6 @@
                 transition: all 0.5s ease;
             }
 
-            /*img#ban-img.sticky {
-                -webkit-transition: all 0.5s ease;
-                -moz-transition: all 0.5s ease;
-                transition: all 0.5s ease;
-            }*/
-
             div#ban-height {
                 max-height:150px;
                 -webkit-transition: all 0.5s ease;
@@ -84,6 +78,7 @@
                 background-color: rgba(255,255,255,0.7);
                 color: 0;
                 text-align: center;
+                cursor: pointer;
             }
             div.menu-item::before {
                 content: '';
@@ -113,6 +108,43 @@
                 padding-right:8px;
             }
 
+/*Banner - Menu Item Drop-downs*/
+
+            div.menu-item-list {
+                position: relative;
+                display: inline-block;
+                width:inherit;
+                /*-webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                transition: all 0.5s ease;*/
+            }
+
+            div.menu-item-list {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+
+            .menu-item-list a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                transition: all 0.5s ease;
+            }
+
+            /* Change color of dropdown links on hover */
+            div.menu-item:hover {background-color: #f1f1f1}
+
+            div.menu-item:hover .menu-item-list {
+                display: block;
+            }
+
+            div.menu-item-list a:hover {
+                background-color: #C1C1C1
+            }
 
 /*Footer Items*/
             div#footer{
@@ -229,10 +261,20 @@ h6{
     border-radius: 0 0 5px 5px;
   }
   .debug-on .parallax {
-    -webkit-transform: translate3d(800px, 0, -800px) rotateY(40deg);
-    transform: translate3d(500px, 0, -800px) rotateY(40deg);
+    //background-color:#FFFFFF;
  }
-  .debug-on .parallax_layer {
+
+ .debug-on .parallax_layer {
     box-shadow: 0 0 0 2px #000;
     opacity: 0.9;
+ }
+
+  .debug-on .parallax_layer_back {
+    //-webkit-transform: translate3d(400px, 0, -5px) rotateY(40deg);
+    transform: translate3d(-40px, 0, 0px) rotateY(60deg);
+  }
+
+  .debug-on .parallax_layer_front {
+    //-webkit-transform: translate3d(800px, 0, -5px) rotateY(40deg);
+    transform: translate3d(-40px, 0, 0px) rotateY(-60deg);
   }
