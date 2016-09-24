@@ -25,25 +25,24 @@ $(".parallax").scroll(function() {
         }
  });
 
-$("div#ban-container").mousewheel(function(e){
-    //Adds Scroll Functionality to the Header Bar. #TODO: EVENT NOT TRIGGERING...
-    var event = new WheelEvent('wheel',{
-        'deltaY': e.deltaY*e.deltaFactor,
-        'deltaX':0,
-        'deltaZ':0,
-        'deltaMode':0
-    });
-//    alert(event.deltaX);
-    $(".parallax").dispatchEvent(event);
-    alert(event.deltaY);
+//BIND SCROLLING ON BANNER TO PARALLAX CONTAINER:
+$('div#ban-container').bind('mousewheel', function(e){
+    var scrollTo= (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
+    $(".parallax").scrollTop(scrollTo);
 });
 
-
+var imgHeight;
+var imgWidth;
 
 $(document).ready(function(){
+    //1 - Resize Events:
+    imgHeight = document.getElementById('scroll-img1').naturalHeight;
+    imgWidth =  document.getElementById('scroll-img1').naturalWidth;
+    $(window).resize();
+
     //Adds start up functions.
-    //0 - Set Banner Width to Parallax Width
-    //1 - Transition Top Bar upon load.
+    //2 - Set Banner Width to Parallax Width
+    //3 - Transition Top Bar upon load.
     $(".parallax").scroll();
     $('div#nav-buttons').fadeOut(300,"swing",function() {
         //At fadeout, make element visible again.
@@ -55,10 +54,78 @@ $(document).ready(function(){
     //$(".parallax_layer_back").css('height',($(".parallax_layer_front")[0].scrollHeight + $(window).height()));
 });
 
-//DEBUGGING SCRIPT FOR Z Scales
-var debugInput = document.querySelector("input");
-function updateDebugState() {
-    document.body.classList.toggle('debug-on', debugInput.checked);
+$(window).resize(function (){
+    //Handler for resize event of window.
+    //1:
+    var width = $(window).width() - getScrollbarWidth();
+    $('div#ban-container').css('width',width);
+
+    if(width < 1100)  {
+        $('div.menu-item span').css('font-size',7+width/(300)).css('display','none');
+    } else {
+        $('div.menu-item span').css('font-size',7+width/(300)).css('display','');
+    }
+
+
+    //Attempt at scaling background image.
+    /*var scale = width/imgWidth;//Math.sqrt(scale) * imgHeight/2
+    var string = 'rect('+0+ 'px,'+Math.round((1-0.4*scale)*imgWidth)+'px,'+imgHeight+'px,'+Math.round(0.4*(scale)*imgWidth)+'px)';
+    alert(string);
+    if(scale<1){
+        $('#scroll-img1').css('clip',string); //Top,Right,Bottom,Left
+    }
+    */
+});
+
+/*-----------------------------------------------------EXTERNAL FUNCTIONS-----------------------------------------------------*/
+/*Get the width of a random scrollbar, to deal with the oversize banner.
+Credit from source: http://stackoverflow.com/questions/13382516/
+*/
+function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+
+    var widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
 }
-debugInput.addEventListener("click", updateDebugState);
-updateDebugState();
+
+/*Check if selected item is in the view-field or not.
+Credit from source: http://stackoverflow.com/questions/487073/
+*/
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+
+
+//DEBUGGING SCRIPT FOR Z Scales
+//var debugInput = document.querySelector("input");
+//function updateDebugState() {
+//    document.body.classList.toggle('debug-on', debugInput.checked);
+//}
+//debugInput.addEventListener("click", updateDebugState);
+//updateDebugState();

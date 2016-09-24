@@ -12,23 +12,24 @@
 /*BODY:*/
             body {
                 background:  var(--background-blue);
-                //background-image: url("../src/img/page.png");
-                //overflow-X:hidden;
-                //overflow-Y:scroll;
+                /*background-image: url("../src/img/page.png");*/
+                /*overflow-X:hidden;*/
+                /*overflow-Y:scroll;*/
                 overflow:hidden;
             }
 /*BANNER ITMES:*/
             div#ban-container {
                 top:0;
                 left:0;
-                width: 100%;
+                /*width: 100%;*/
                 background: var(--green2);
                 background-image: url("../src/img/page.png");
                 max-height: 230px;
-                height: 230px;          ///Height of banner img.
-                // set animation
+                height: 230px;          /*/Height of banner img.
+                /* set animation
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
+                /*pointer-events:none;*/
             }
 
             div#ban-container.sticky {
@@ -61,15 +62,18 @@
             }
 
             div#nav-buttons {
-                //background-color:#132C3D;
+                /*background-color:#132C3D;*/
                 height:100%;
                 right:0;
                 position:absolute;
             }
 
+            div#nav-button-container {
+                /*pointer-events:all;*/
+            }
 
             div.menu-item {
-                //position: relative;
+                /*position: relative;*/
                 display: inline-block;
                 border-top: #CCCCCC  1px solid;
                 border-bottom: #CCCCCC 1px solid;
@@ -101,7 +105,8 @@
                 margin:0;
                 top:0;
                 bottom:0;
-                font-family: Lustria,Georgia
+                font-family: Lustria,Georgia;
+                font-size: 15px;
             }
 
             div.menu-item i {
@@ -146,17 +151,20 @@
                 background-color: #C1C1C1
             }
 
+/*Service Times*/
+
+
 /*Footer Items*/
             div#footer{
-                //margin:0 auto;
-                //background:#C9E2C9;
+                /*margin:0 auto;*/
+                /*background:#C9E2C9;*/
                 background-image: url("../src/img/page.png");
                 background-position: bottom center;
             }
 
             div#footerInfo{
-                //background: #C9E2C9;
-                //top:0;
+                /*background: #C9E2C9;*/
+                /*top:0;*/
                 bottom:0;
                 width:100%;
                 margin:0;
@@ -167,7 +175,8 @@
 /*SCROLLING IMAGES:*/
             img.scroll-img{
                 width: 100%;
-                //position:absolute;
+                /*position:absolute;*/
+                margin:auto;
                 opacity:0.7;
             }
 
@@ -183,9 +192,9 @@
 
                 overflow: auto;
                 overflow-x: hidden;
-                //overflow-y: hidden;
+                /*overflow-y: hidden;*/
                 overflow-y: visible;
-                //padding-right:-15px;
+                /*padding-right:-15px;*/
             }
             .parallax_layer {
                 position: absolute;
@@ -204,8 +213,8 @@
                 */
 
                 transform: translateZ(-1px) scale(2);
-                //overflow-Y:hidden;
-                //overflow-X:hidden;
+                /*overflow-Y:hidden;*/
+                /*overflow-X:hidden;*/
             }
 
 
@@ -217,7 +226,7 @@ h2{
     white-space:nowrap;
 }
 h3{
-    white-space:nowrap;
+    /*white-space:nowrap;*/
 }
 h4{
     white-space:nowrap;
@@ -261,7 +270,7 @@ h6{
     border-radius: 0 0 5px 5px;
   }
   .debug-on .parallax {
-    //background-color:#FFFFFF;
+    /*background-color:#FFFFFF;*/
  }
 
  .debug-on .parallax_layer {
@@ -270,11 +279,11 @@ h6{
  }
 
   .debug-on .parallax_layer_back {
-    //-webkit-transform: translate3d(400px, 0, -5px) rotateY(40deg);
+    /*-webkit-transform: translate3d(400px, 0, -5px) rotateY(40deg);*/
     transform: translate3d(-40px, 0, 0px) rotateY(60deg);
   }
 
   .debug-on .parallax_layer_front {
-    //-webkit-transform: translate3d(800px, 0, -5px) rotateY(40deg);
+    /*-webkit-transform: translate3d(800px, 0, -5px) rotateY(40deg);*/
     transform: translate3d(-40px, 0, 0px) rotateY(-60deg);
   }
