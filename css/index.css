@@ -22,14 +22,20 @@
                 top:0;
                 left:0;
                 /*width: 100%;*/
-                background: var(--green2);
-                background-image: url("../src/img/page.png");
                 max-height: 230px;
-                height: 230px;          /*/Height of banner img.
+                height: 230px;          /*/Height of banner img.*/
+                transition: all 0.5s ease;
                 /* set animation
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
                 /*pointer-events:none;*/
+            }
+
+            div#header-row1{
+                margin:0;
+                background: var(--green2);
+                background-image: url("../src/img/page.png");
+                box-shadow: -3px 0px 5px #888888; /*-3 stops shadow on scroll bar.*/
             }
 
             div#ban-container.sticky {
@@ -72,14 +78,24 @@
                 /*pointer-events:all;*/
             }
 
+            div#nav-button-container-inner{
+                height:70%;
+                width:90%;
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+                box-shadow: 2px 2px 5px #888888;
+                border-radius:8px 8px 8px 8px;
+            }
+
             div.menu-item {
                 /*position: relative;*/
                 display: inline-block;
-                border-top: #CCCCCC  1px solid;
-                border-bottom: #CCCCCC 1px solid;
-                border-right: #CCCCCC 1px solid;
+                /*border-top: #CCCCCC  1px solid;
+                border-bottom: #CCCCCC 1px solid;*/
+                border-right: #888888 1px solid;
                 height:100%;
-                background-color: rgba(255,255,255,0.7);
+                background-color: rgba(255,255,255,0.95);
                 color: 0;
                 text-align: center;
                 cursor: pointer;
@@ -93,11 +109,12 @@
 
 
             div.menu-item.left {
-                border-left: #CCCCCC 1px solid;
+                /*border-left: #CCCCCC 1px solid;*/
                 border-radius:8px 0px 0px 8px;
             }
             div.menu-item.right {
-                border-right: #CCCCCC 1px solid;
+                /*border-right: #CCCCCC 1px solid;*/
+                border-right: none;
                 border-radius:0px 8px 8px 0px;
             }
 
@@ -105,8 +122,9 @@
                 margin:0;
                 top:0;
                 bottom:0;
-                font-family: Lustria,Georgia;
-                font-size: 15px;
+                /*font-family: Lustria,Georgia;*/
+                //font-family: 'Baloo Bhaina', cursive;
+                //font-size: 15px;
             }
 
             div.menu-item i {
@@ -124,11 +142,20 @@
                 transition: all 0.5s ease;*/
             }
 
-            div.menu-item-list {
-                display: none;
+            div.menu-item-list-pad {
                 position: absolute;
+                width:100%;
+                margin-left:-15px;
+                padding-right:15px;
+                padding-left:15px;
+                background-color: rgba(0,0,0,0);
+                display: none;
+            }
+
+            div.menu-item-list {
                 background-color: #f9f9f9;
-                min-width: 160px;
+                width:100%;
+                min-width: 100px; /*To Keep text a decent size*/
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             }
 
@@ -141,18 +168,45 @@
             }
 
             /* Change color of dropdown links on hover */
-            div.menu-item:hover {background-color: #f1f1f1}
+            div.menu-item:hover {
+                background-color: #E1E1E1;/*#f1f1f1;*/
+                transition: all 0.5s ease;
+            }
 
-            div.menu-item:hover .menu-item-list {
+            div.menu-item:hover .menu-item-list-pad {
                 display: block;
             }
 
             div.menu-item-list a:hover {
                 background-color: #C1C1C1
             }
+/* General Page Elements*/
+            /*White box to put text in.*/
+            div.white-box {
+                background-color:rgba(255,255,255,0.85);
+                border-radius:10px
+            }
+            /*Padding inside white box to place text & images*/
+            div.white-box-pad {
+                padding:20px
+            }
+
+            /*Text Within a white box.*/
+            div.white-box p {
+                font-family:
+            }
+
+            div.white-box h1 {
+                font-family;
+            }
+
 
 /*Service Times*/
-
+            div.service {
+                /*Primarily For Scaling on small devices*/
+                padding-top:10px;
+                padding-bottom:10px;
+            }
 
 /*Footer Items*/
             div#footer{
@@ -173,10 +227,34 @@
 
 
 /*SCROLLING IMAGES:*/
+
+            div.scroll-img-container{
+                overflow:hidden;
+                height:100%;
+                position: relative;
+            }
+
+            div#scroll-img1 {
+                background-image: url("../src/img3/stalfreds.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height:100%;
+            }
+
+
             img.scroll-img{
-                width: 100%;
-                /*position:absolute;*/
-                margin:auto;
+                /*width: 100%;*/
+
+                left:-1000%;
+                right:1000%;
+                top:-1000%;
+                bottom:-1000%;
+                min-height:100%;
+                /*min-width:100%;
+                TODO: Fix scaled width/height profile*/
+                margin: 0 auto;
+
                 opacity:0.7;
             }
 

@@ -36,6 +36,11 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
 
+    <!--Extra Fonts: https://fonts.google.com, also https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/-->
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
     <!-- Scripts at the bottom! -->
 
 
@@ -47,67 +52,67 @@
     <!--</div>-->
     <div class="navbar navbar-fixed-top sticky" id="ban-container" style="position:absolute;">
         <div class="row" id="header-row1" style="width:100%">
-            <div class="col-md-3" id="ban-height" style="max-height:48px">
+            <div class="col-sm-2" id="ban-height" style="max-height:48px">
                 <img id="ban-img" class="img-responsive img-rounded pull-center" src="src/img/banner2.png" onclick="javascript:location.href='#'">
             </div>
-            <div class="col-md-9" id="nav-buttons" style="display:none; width:75%; top:0;">
+            <div class="col-sm-10" id="nav-buttons" style="display:none; top:0; /*width:75%*/">
                 <!--THIS ELEMENT IS MADE TO MOVE BETWEEN HeaderRow1 and HeaderRow2-->
-                <div id="nav-button-container" style="display:table; position:absolute; width:100%;height:100%;"><div style="display: table-cell; position:relative; vertical-align:middle; height:100%;">
-                    <div style="height:70%;width:90%; margin-left:auto;margin-right:auto; display:block">
+                <div id="nav-button-container" style="display:table; width:100%;height:100%;"><div style="display: table-cell; position:relative; vertical-align:middle; height:100%;">
+                    <div id='nav-button-container-inner'>
                         <!--<div class="col-md-2 menu-item">Home</div> WILL REPLACE WITH THE BANNER IMG.-->
                         <div class="col-sm-2 menu-item left">
                             <i class="fa fa-lg fa-home" aria-hidden="true"></i><span>  Our Church  </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-sm-2 menu-item">
                             <i class="fa fa-lg fa-clock-o" aria-hidden="true"></i><span>  Services    </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-sm-2 menu-item">
                             <i class="fa fa-lg fa-heart-o" aria-hidden="true"></i><span>  Ministries  </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-sm-2 menu-item">
                             <i class="fa fa-lg fa-hand-peace-o" aria-hidden="true"></i><span>  Community   </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-sm-2 menu-item">
                             <i class="fa fa-lg fa-phone" aria-hidden="true"></i><span>  Contact     </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-sm-2 menu-item right">
                             <i class="fa fa-lg fa-send" aria-hidden="true"></i><span>  Resources   </span>
-                            <div class="menu-item-list">
+                            <div class="menu-item-list-pad"><div class="menu-item-list">
                                 <a href="#">About Us</a>
                                 <a href="#">Our Team</a>
                                 <a href="#">News & Events</a>
-                            </div>
+                            </div></div>
                         </div>
                     </div>
                 </div></div>
             </div>
         </div>
-        <div class="row" id="header-row2" style="width:100%;">
+        <div class="row" id="header-row2" style="width:100%; margin:0; padding-top:15px">
             <div class="col-md-12" id="top-buttons" style="right:0; display:none;"></div>
         </div>
     </div>
@@ -117,9 +122,12 @@
     <div class="parallax">
         <div class="parallax_layer parallax_layer_back">
             <!--Offset for HeaderBar.-->
-            <div class="row" style="height:50px; display:inline-block"></div>
+            <!--<div class="row" style="height:50px; display:inline-block"></div>-->
             <!-- Full Width Image:-->
-            <div class="row"><img class="scroll-img" id="scroll-img1" src="src/img3/stalfreds.jpg" style="position:absolute"></div>
+            <div class="row scroll-img-container">
+                <!--<img class="img-responsive scroll-img" id="scroll-img1" src="src/img3/stalfreds.jpg" style="/*position:absolute*/">-->
+                <div id="scroll-img1"></div>
+            </div>
             <!--<div class="row"><img class="scroll-img" id="scroll-img2" src="src/img2/life1.jpg"></div>-->
         </div>
         <div class="parallax_layer parallax_layer_front">
@@ -128,69 +136,75 @@
             <!--Welcome Message-->
             <div class="row">
                 <div style="width:60%; margin: 0 auto">
-                    <div class="row" style="background-color:rgba(255,255,255,0.8); border-radius:10px">
-                        <div style="width:80%; margin: 0 auto">
-                            <h1>Welcome to <span style="color:#00AABA">St. Paul's</span>.</h1>
-                        </div>
-                        <div style="width:90%; margin: 0 auto;">
-                            <p style="">We're about Jesus. St Paul’s Caulfield North is an Anglican Church which is Christ centred, committed to the ministry he calls us to, and the care of one another.<br>
-                                        We seek to be relevant and to meet people at their point of need. Whether you are looking for a new church or are just visiting, you're most welcome to join us.<br><br>
-                                        And no, this image behind is not our Church, we just don't have a good enough image yet to display something decent! We invisige an image like this one (of St. Alfreds, Blackburn North).
-                            </p>
+                    <div class="white-box">
+                        <div class="white-box-pad">
+                            <div style="width:80%; margin: 0 auto;">
+                                <h1>Welcome to <span style="color:#00AABA">St. Paul's</span>.</h1>
+                            </div>
+                            <div style="width:80%; margin-right: 0; display:block;">
+                                <p style="">We're about Jesus. St Paul’s Caulfield North is an Anglican Church which is Christ centred, committed to the ministry he calls us to, and the care of one another.<br>
+                                            We seek to be relevant and to meet people at their point of need. Whether you are looking for a new church or are just visiting, you're most welcome to join us.<br><br>
+                                            And no, this image behind is not our Church, we just don't have a good enough image yet to display something decent! We invisige an image like this one (of St. Alfreds, Blackburn North).
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             <!--Service Times-->
             <div class="row" style="height:300px"></div>
-                <div style="width:90%; margin:0 auto; background-color:rgba(255,255,255,0.8); border-radius:10px ">
-                    <div class="row" style="margin:0">
-                        <div style="text-align:center">
-                            <h1>Service Times</h1>
+                <div style="width:90%; margin:0 auto;">
+                    <div class=" white-box">
+                        <div class="white-box-pad">
+                            <div class="row" style="margin:0">
+                                <div style="text-align:center">
+                                    <h1>Service Times</h1>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0">
+                                <div class="col-md-4 service">
+                                    <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                        <div class="row" style="margin:0; text-align:center"><h3>Contemporary Worship</h3></div>
+                                        <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10:15am Sundays</p></div>
+                                        <div class="row" style="margin:0">
+                                            <img src="src/img/cafe1.jpg" style="width:100%">
+                                        </div>
+                                        <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+
+                                        </p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 service">
+                                    <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                        <div class="row" style="margin:0; text-align:center"><h3>530@530 (Evening Service)</h3></div>
+                                        <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>5:30pm Sundays</p></div>
+                                        <div class="row" style="margin:0">
+                                            <img src="src/img/young-adults.jpg" style="width:100%">
+                                        </div>
+                                        <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+
+                                        </p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 service">
+                                    <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
+                                        <div class="row" style="margin:0; text-align:center"><h3>Healing Service</h3></div>
+                                        <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10am Thursdays</p></div>
+                                        <div class="row" style="margin:0">
+                                            <img src="src/img/Healing-service1.jpg" style="width:100%">
+                                        </div>
+                                        <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
+                                            Our mission is to bring healing and restoration in body, mind and spirit through the power of the Cross, by the laying on of hands and the prayer of faith.<br>
+                                            The Healing Service 10.00am Thursday (February to November) offers restoration through praise and worship, teaching, the laying on of hands and intercessory prayer.<br>
+                                            Our vicar, Rev. Howard Langmead, along with guest speakers during the year, will preach on healing and related topics.<br>
+                                            The healing ministry is enhanced and supplemented by Prayer Ministry, which is offered to those who regularly attend our services.
+                                        </p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Spacing-->
+                            <div class="row" style="margin:0; padding-top:30px"></div>
                         </div>
                     </div>
-                    <div class="row" style="margin:0">
-                        <div class="col-sm-4 service">
-                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
-                                <div class="row" style="margin:0; text-align:center"><h3>Contemporary Worship</h3></div>
-                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10:15am Sundays</p></div>
-                                <div class="row" style="margin:0">
-                                    <img src="src/img/cafe1.jpg" style="width:100%">
-                                </div>
-                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
-
-                                </p></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
-                                <div class="row" style="margin:0; text-align:center"><h3>530@530 (Evening Service)</h3></div>
-                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>5:30pm Sundays</p></div>
-                                <div class="row" style="margin:0">
-                                    <img src="src/img/young-adults.jpg" style="width:100%">
-                                </div>
-                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
-
-                                </p></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div style="width:90%; border:#AAAAAA 1px solid;border-radius:8px; margin:0 auto; background-color:rgba(0,139,147,0.1)">
-                                <div class="row" style="margin:0; text-align:center"><h3>Healing Service</h3></div>
-                                <div class="row" style="margin:0; text-align:right; padding-right:10px; color:rgb(0,70,133);"><p>10am Thursdays</p></div>
-                                <div class="row" style="margin:0">
-                                    <img src="src/img/Healing-service1.jpg" style="width:100%">
-                                </div>
-                                <div class="row" style="margin:0; text-align:justify; padding:20px"><p>
-                                    Our mission is to bring healing and restoration in body, mind and spirit through the power of the Cross, by the laying on of hands and the prayer of faith.<br>
-                                    The Healing Service 10.00am Thursday (February to November) offers restoration through praise and worship, teaching, the laying on of hands and intercessory prayer.<br>
-                                    Our vicar, Rev. Howard Langmead, along with guest speakers during the year, will preach on healing and related topics.<br>
-                                    The healing ministry is enhanced and supplemented by Prayer Ministry, which is offered to those who regularly attend our services.
-                                </p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Spacing-->
-                    <div class="row" style="margin:0; padding-top:30px"></div>
                 </div>
 
             </div>

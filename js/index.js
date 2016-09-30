@@ -4,7 +4,7 @@ $(".parallax").scroll(function() {
         $(".scroll-img#scroll-img1").css("opacity", 0.7 - 0.4*$(this).scrollTop() / 600);
 
         if($(this).scrollTop() > 20){
-            $('div#ban-height').css("max-height","48px").css("width","25%");//.removeClass("col-md-3").addClass("col-md-6")
+            $('div#ban-height').css("max-height","48px").css("width","");//.removeClass("col-md-3").addClass("col-md-6")
             $('div#ban-container').addClass("sticky");
             $('div#top-buttons').fadeOut(100, function(){
                 $("#nav-button-container").appendTo("#nav-buttons");
@@ -30,6 +30,13 @@ $('div#ban-container').bind('mousewheel', function(e){
     var scrollTo= (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
     $(".parallax").scrollTop(scrollTo);
 });
+
+/*$(window).scroll(function(e){
+    //TODO: Get scrolling working for keydown events.
+    var scrollTo= (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
+    $(".parralax").scrollTop(scrollTo);
+});*/
+
 
 var imgHeight;
 var imgWidth;
@@ -58,12 +65,20 @@ $(window).resize(function (){
     //Handler for resize event of window.
     //1:
     var width = $(window).width() - getScrollbarWidth();
+    var height = $(window).height();
     $('div#ban-container').css('width',width);
-
-    if(width < 1100)  {
-        $('div.menu-item span').css('font-size',7+width/(300)).css('display','none');
+    if(width > height) {
+        if(width < 1100)  {
+            $('div.menu-item span').css('font-size',7+width/(200)).css('display','none');
+        } else {
+            $('div.menu-item span').css('font-size',7+width/(200)).css('display','');
+        }
     } else {
-        $('div.menu-item span').css('font-size',7+width/(300)).css('display','');
+        if(width < 1100)  {
+            $('div.menu-item span').css('font-size',7+height/(200)).css('display','none');
+        } else {
+            $('div.menu-item span').css('font-size',7+height/(200)).css('display','');
+        }
     }
 
 
