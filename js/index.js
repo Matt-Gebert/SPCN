@@ -27,9 +27,8 @@ $(".parallax").scroll(function() {
 
 //BIND SCROLLING ON BANNER TO PARALLAX CONTAINER:
 $('div#ban-container').bind('mousewheel', function(e){
-    var scrollTo= (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
+    var scrollTo = (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
     $(".parallax").scrollTop(scrollTo);
-    alert('test');
 });
 
 /*$(window).scroll(function(e){
