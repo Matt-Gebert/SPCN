@@ -29,6 +29,7 @@ $(".parallax").scroll(function() {
 $('div#ban-container').bind('mousewheel', function(e){
     var scrollTo= (e.deltaY*e.deltaFactor*-1) + $('.parallax').scrollTop();
     $(".parallax").scrollTop(scrollTo);
+    alert('test');
 });
 
 /*$(window).scroll(function(e){
@@ -59,11 +60,14 @@ $(document).ready(function(){
     //alert($(".parallax")[0].scrollHeight);
     //alert($(".parallax_layer_front")[0].scrollHeight);
     //$(".parallax_layer_back").css('height',($(".parallax_layer_front")[0].scrollHeight + $(window).height()));
+
+    //4 - Match Div Columns to be same height:
+    matchHeightCustom('.service');
 });
 
 $(window).resize(function (){
     //Handler for resize event of window.
-    //1:
+    //1: Fix Scrollbar Hiehgts
     var width = $(window).width() - getScrollbarWidth();
     var height = $(window).height();
     $('div#ban-container').css('width',width);
@@ -81,6 +85,8 @@ $(window).resize(function (){
         }
     }
 
+    //2: Resize heights of columns to match.
+    matchHeightCustom('.service');
 
     //Attempt at scaling background image.
     /*var scale = width/imgWidth;//Math.sqrt(scale) * imgHeight/2
@@ -91,6 +97,7 @@ $(window).resize(function (){
     }
     */
 });
+
 
 /*-----------------------------------------------------EXTERNAL FUNCTIONS-----------------------------------------------------*/
 /*Get the width of a random scrollbar, to deal with the oversize banner.
@@ -133,6 +140,27 @@ function isScrolledIntoView(elem)
     var elemBottom = elemTop + $(elem).height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+//Custom Written Function to match heights of columned elements of a class.
+function matchHeightCustom(elem)
+{
+    //1 Reset to default heights:
+    $(elem).each(function(){
+        $(this).css('height','auto');
+    });
+    //2 Find maximum height:
+    var maxHeight = 0;
+    $(elem).each(function(){
+        var elementHeight = ($(this).css('height').replace(/[^-\d\.]/g, ''));
+        if (maxHeight < elementHeight) {
+            maxHeight = elementHeight;
+        }
+    });
+    //3 Set all heights to maximum height:
+    $(elem).each(function(){
+        $(this).css('height',maxHeight.concat('px'));
+    });
 }
 
 
