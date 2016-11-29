@@ -1,7 +1,7 @@
 //Scrolling Functions:
 $(".parallax").scroll(function() {
     //Scrolling Fading for scroll-img
-        $(".scroll-img#scroll-img1").css("opacity", 0.7 - 0.4*$(this).scrollTop() / 600);
+        $("#scroll-img1").css("opacity", 0.7 - 0.4*$(this).scrollTop() / 600);
 
         if($(this).scrollTop() > 20){
             $('div#ban-height').css("max-height","48px").css("width","");//.removeClass("col-md-3").addClass("col-md-6")
@@ -20,8 +20,6 @@ $(".parallax").scroll(function() {
             $('div#ban-container').removeClass("sticky");
             $('div#ban-height').css("max-height","150px").css("width","100%");//.removeClass("col-md-6").addClass("col-md-3")
             $('div#top-buttons').css("max-height","100px");
-
-
         }
  });
 
