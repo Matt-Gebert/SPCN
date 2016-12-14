@@ -80,6 +80,7 @@ div.menu-item {
   color: 0;
   text-align: center;
   cursor: pointer;
+  /*TODO: Adjust cursor for non-linking menu-items*/
 }
 div.menu-item::before {
   content: '';

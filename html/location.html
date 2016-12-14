@@ -39,14 +39,9 @@ github.com/Matt-Gebert
   <link rel="stylesheet" href="../cssCustom/banner.css">
   <link rel="stylesheet" href="../cssCustom/text.css">
   <!-- Stylesheets Internal Page Specific -->
-  <link rel="stylesheet" href="../cssCustom/maps.css">
+  <link rel="stylesheet" href="../cssCustom/location.css">
 
-  <style>
-  #map {
-    height: 630px;
-    width: 100%;
-  }
-  </style>
+
 
   <!--Extra Fonts: https://fonts.google.com, also https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/-->
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -66,7 +61,7 @@ github.com/Matt-Gebert
       <div class="navbar navbar-fixed-top sticky" id="ban-container" style="position:absolute;">
         <div class="row" id="header-row1" style="width:100%">
           <div class="col-sm-2" id="ban-height" style="max-height:48px">
-            <img id="ban-img" class="img-responsive img-rounded pull-center" src="../src/img/banner2.png" onclick="javascript:location.href='../html/index.html'">
+            <img id="ban-img" class="img-responsive img-rounded pull-center" src="../src/img/banner2.png" onclick="javascript:location.href='../index.html'">
           </div>
           <div class="col-sm-10" id="nav-buttons" style="display:none; top:0; /*width:75%*/">
             <!--THIS ELEMENT IS MADE TO MOVE BETWEEN HeaderRow1 and HeaderRow2-->
@@ -108,7 +103,7 @@ github.com/Matt-Gebert
                 <div class="col-sm-2 menu-item">
                   <i class="fa fa-lg fa-phone" aria-hidden="true"></i><span>  Contact     </span>
                   <div class="menu-item-list-pad"><div class="menu-item-list">
-                    <a href="../html/maps.html">Location</a>
+                    <a href="../html/location.html">Location</a>
                     <!-- <a href="#">Our Team</a> -->
                     <!-- <a href="#">News & Events</a> -->
                   </div></div>
@@ -149,38 +144,52 @@ github.com/Matt-Gebert
         <!-- Front Layer deals with all text and image elements for viewing. -->
         <div class="parallax_layer parallax_layer_front">
           <!--Offset for HeaderBar.-->
-          <div class="row" style="height:220px; display:inline-block"></div>
-
+          <div class="row" style="height:60px; display:inline-block"></div>
 
           <!-- GOOGLE MAPS API: -->
           <div class="row">
-            <div style="width:60%; margin: 0 auto">
+            <div style="width:80%; margin: 0 auto">
               <h3 style="color:white">Maps</h3>
               <div id="map"></div>
               </div
             </div>
+
             <script>
             function initMap() {
-              var uluru = {lat: -37.8667069, lng: 145.027207};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: "st paul's caulfield north"
-              });
-              var marker = new google.maps.Marker({
-                position: "st paul's caulfield north",
-                map: map
-              });
-            }
+              var stpauls = {lat: -37.8667069, lng: 145.027207};
 
-            //TODO: Make secure?
-            var src_url = "https://maps.googleapis.com/maps/api/js?key=" + mapsKey + "&callback=initMap";
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: stpauls,
+                styles: mapstyles /*Checkout JS File, you can go ham with styles!*/
+              });
+
+              var infowindow = new google.maps.InfoWindow();
+              var service = new google.maps.places.PlacesService(map);
+
+              service.getDetails({
+                placeId: 'ChIJlzq94ulp1moRL26Oef8bBhw'
+              }, function(place, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                  });
+                  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                  //  + '<br>' +
+                  place.formatted_address + '</div>');
+                  infowindow.open(map, marker);
+                };
+              });
+            };
+
             </script>
 
             <!-- Can Check Specific Keys via Google APIs: https://console.developers.google.com/apis/credentials?project=cohesive-math-150801 -->
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6qloNnN2Kt9tmE7SbZPguO-V7WG_jZ3g&callback=initMap">
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6qloNnN2Kt9tmE7SbZPguO-V7WG_jZ3g&libraries=places&callback=initMap">
             </script> -->
             <!-- END MAPS API -->
-
 
 
             <!-- Footer and Information: -->
@@ -250,8 +259,8 @@ github.com/Matt-Gebert
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
       <!--Specific Page Script -->
-      <script src="../js/index.js"></script>
+      <script src="../js/staticsubpage.js"></script>
       <!-- <script src="../apis/googlemapskey.js"></script> -->
     </div>
   </body>
-</html>
+  </html>
